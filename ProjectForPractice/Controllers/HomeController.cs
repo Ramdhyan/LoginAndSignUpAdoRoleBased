@@ -145,7 +145,7 @@ namespace ProjectForPractice.Controllers
                                 TempData["msg"] = "<script>alert('Welcome to Admin Pannel !')</script>";
 
                                 return RedirectToAction("Index", "Admin");
-
+                                   
                             }
                             else
                             {
