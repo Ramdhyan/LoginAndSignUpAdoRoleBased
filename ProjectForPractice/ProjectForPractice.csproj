@@ -134,6 +134,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DB\Procedure\sp_login.procedure.sql" />
+    <Content Include="DB\Procedure\sp_registration.procedure.sql" />
+    <Content Include="DB\Procedure\State and City.procedure.sql" />
+    <Content Include="DB\Tables\City.table.sql" />
+    <Content Include="DB\Tables\login.table.sql" />
+    <Content Include="DB\Tables\Registration.table.sql" />
+    <Content Include="DB\Tables\Role.table.sql" />
+    <Content Include="DB\Tables\State.table.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
