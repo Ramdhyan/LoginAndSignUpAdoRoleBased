@@ -5,4 +5,4 @@ as
 begin
 select UserName,Password,RoleId from login where username=@UserName and password=@Password
 end
---insert into login values('admin@gmail.com','Admin',2)
+--insert into login values('admin@gmail.com','Admin',2) 

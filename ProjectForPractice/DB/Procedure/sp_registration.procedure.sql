@@ -9,7 +9,7 @@ create procedure sp_registration
 @State varchar(100),
 @City varchar(100),	
 @Address varchar(100),
-@Pincode varchar(100),
+@Pincode varchar(100), 
 @Password varchar(100),
 @CreatedDate datetime,
 @UpdatedDate datetime,
