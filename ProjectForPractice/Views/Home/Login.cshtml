@@ -6,9 +6,9 @@
 
 <h2>Login</h2>
 
-@Html.Raw(TempData["msg"])
 @Html.Raw(TempData["error"])
-@using (Html.BeginForm("Login","home",FormMethod.Post))
+
+@using (Html.BeginForm("Login", "home", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

@@ -171,9 +171,37 @@ namespace ProjectForPractice.Controllers
         }
         public ActionResult UserData()
         {
-            ViewBag.Message = "Your contact page.";
+            Registration registration = new Registration();
 
-            return View();
+            using (SqlConnection con=new SqlConnection(connectionstring))
+            {
+                SqlCommand cmd = new SqlCommand("sp_userdata", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("@UserName", System.Data.SqlDbType.VarChar, 30).Value = Session["UserName"].ToString();
+                cmd.Parameters.Add("@RoleId", System.Data.SqlDbType.Int).Value = Session["RoleId"].ToString();
+                con.Open();
+                var username = Session["UserName"];
+                var role = (int)Session["RoleId"];
+                
+                SqlDataReader dr = cmd.ExecuteReader();
+                while(dr.Read())
+                {
+                    if (username != null && role == 1)
+                    {
+                        registration.Id = Convert.ToInt32(dr["Id"]);
+                        registration.Name = dr["Name"].ToString();
+                        registration.Email = dr["Email"].ToString();
+                        registration.Mobile = dr["Mobile"].ToString();
+                        registration.Gender = dr["Gender"].ToString();
+                        registration.Profile = dr["Profile"].ToString();
+                        registration.Qualification = dr["Qualification"].ToString();
+                        registration.State = dr["State"].ToString();
+                        registration.City = dr["City"].ToString();
+                    }
+                }
+            }
+
+                return View(registration);
         }
     }
 }
